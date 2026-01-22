@@ -16,7 +16,7 @@ client = OpenAI(
 )
 
 # Папка, где лежат маркдауны с теорией
-TICKETS_DIR = "tickets"
+BASE_DIR = "knowledge_base"
 
 # Список для хранения текстов документов
 documents = []
@@ -24,15 +24,15 @@ documents = []
 # Список для хранения названий терминов (имена файлов)
 metainfo = []
 
-# Прохожусь по всем файлам в папке tickets
-for filename in os.listdir(TICKETS_DIR):
+# Прохожусь по всем файлам в папке knowledge_base
+for filename in os.listdir(BASE_DIR):
 
     # На всякий случай отсею все немаркдауны
     if not filename.endswith(".md"):
         continue
 
     # Формирую полный путь к файлу
-    path = os.path.join(TICKETS_DIR, filename)
+    path = os.path.join(BASE_DIR, filename)
 
     # Открываю файл в кодировке UTF-8
     with open(path, "r", encoding="utf-8") as f:
