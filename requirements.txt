@@ -1,2 +1,5 @@
-aiogram==2.25.1
+aiogram==3.4.1
+openai>=1.10.0
 python-dotenv
+markdown
+numpy
